@@ -14,6 +14,7 @@
 		D2A78F95205B3CFB0052AD28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A78F93205B3CFB0052AD28 /* LaunchScreen.storyboard */; };
 		D2A78FA0205B3CFB0052AD28 /* PhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A78F9F205B3CFB0052AD28 /* PhotosTests.swift */; };
 		D2A78FAB205B3CFB0052AD28 /* PhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A78FAA205B3CFB0052AD28 /* PhotosUITests.swift */; };
+		D2A78FB9205B45E00052AD28 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A78FB8205B45E00052AD28 /* ScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D2A78FA6205B3CFB0052AD28 /* PhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A78FAA205B3CFB0052AD28 /* PhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosUITests.swift; sourceTree = "<group>"; };
 		D2A78FAC205B3CFB0052AD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2A78FB8205B45E00052AD28 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				D2A78F8A205B3CFB0052AD28 /* AppDelegate.swift */,
 				D2A78F8C205B3CFB0052AD28 /* ViewController.swift */,
+				D2A78FB8205B45E00052AD28 /* ScrollView.swift */,
 				D2A78F8E205B3CFB0052AD28 /* Main.storyboard */,
 				D2A78F91205B3CFB0052AD28 /* Assets.xcassets */,
 				D2A78F93205B3CFB0052AD28 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 			files = (
 				D2A78F8D205B3CFB0052AD28 /* ViewController.swift in Sources */,
 				D2A78F8B205B3CFB0052AD28 /* AppDelegate.swift in Sources */,
+				D2A78FB9205B45E00052AD28 /* ScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
