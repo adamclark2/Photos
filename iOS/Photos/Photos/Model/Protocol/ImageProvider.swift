@@ -19,7 +19,7 @@ import UIKit.UIImage
      - Get image metadata from an id
      - Get a UIImage from image metadata
  */
-public protocol ImasgeProvider{
+public protocol ImageProvider{
     
     /// Get a list of images that should be displayed to the user
     func getImageList() -> [Int];
