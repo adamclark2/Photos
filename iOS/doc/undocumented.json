@@ -153,27 +153,6 @@
       "symbol": "ImageMetadata.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
-    },
-    {
-      "file": "/Users/adamclark/Documents/GitHub/Photos/iOS/Photos/Photos/Model/Impl/MockImageProvider.swift",
-      "line": 18,
-      "symbol": "MockImageProvider.getImageList()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/adamclark/Documents/GitHub/Photos/iOS/Photos/Photos/Model/Impl/MockImageProvider.swift",
-      "line": 22,
-      "symbol": "MockImageProvider.getImageFromId(id:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/adamclark/Documents/GitHub/Photos/iOS/Photos/Photos/Model/Impl/MockImageProvider.swift",
-      "line": 32,
-      "symbol": "MockImageProvider.getImageFromMetadata(metadata:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/adamclark/Documents/GitHub/Photos/iOS/Photos"

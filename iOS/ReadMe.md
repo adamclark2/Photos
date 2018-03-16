@@ -15,6 +15,19 @@ as of commit #`todo fill this in`
 * XCode
     * The `IDE`
 
+* Ruby
+   * Ruby comes with `Mac Os` we use this for Jazzy, auto-generated documentation like java-doc
+
 ## Installation Instructions
+* Installing Jazzy and Using
+   * In the terminal type
+   ```bash
+    sudo gem install jazzy
+   ```
+   * To run jazzy use
+   ```bash
+        cd Photos/iOS/Photos 
+        jazzy --output ../doc --min-acl private internal
+   ```
 > TODO  
 > Write this an refer to backend install
