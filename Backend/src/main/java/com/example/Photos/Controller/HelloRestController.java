@@ -1,4 +1,4 @@
-package com.example.Photos;
+package com.example.Photos.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
