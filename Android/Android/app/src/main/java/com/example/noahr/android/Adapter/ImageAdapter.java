@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.noahr.android.R;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,11 +21,11 @@ import java.util.List;
 
 public class ImageAdapter extends BaseAdapter {
 
-    private List<String> urls;
+    private ArrayList<String> urls;
     private Context mContext;
     private static LayoutInflater inflater = null;
 
-    public ImageAdapter(Context c, List<String> urlList) {
+    public ImageAdapter(Context c, ArrayList<String> urlList) {
         this.mContext = c;
         this.urls = urlList;
         inflater = ( LayoutInflater)mContext.
@@ -66,12 +67,13 @@ public class ImageAdapter extends BaseAdapter {
         rowV = inflater.inflate(R.layout.scroll_row, null);
         holder.sender = rowV.findViewById(R.id.captionXML);
         holder.imgV = rowV.findViewById(R.id.imgXML);
+        System.out.println(urls.get(position));
         Picasso.get()
-                .load(urls.get(position) + ".png")
+                .load(urls.get(position))
                 .into(holder.imgV);
 
         holder.sender.setText("AnimeBoi247");
-        holder.button = (Button) rowV.findViewById(R.id.voteButton);
+        holder.button = rowV.findViewById(R.id.voteButton);
         holder.button.setOnClickListener(new View.OnClickListener() {
 
             @Override

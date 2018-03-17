@@ -13,6 +13,6 @@ interface ImageEndpoints {
     /**
      * Return the URLs of all the images stored remotely
      */
-    @GET("{images}")
+    @GET("imageurls")
     fun getImages(): Call<List<String>>
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListAdapter;
+import android.widget.Toast;
 
 import com.example.noahr.android.Adapter.ImageAdapter;
 
@@ -32,7 +33,7 @@ public class ImageNetworkServiceRetrofit implements ImageNetworkService {
 
     public ImageNetworkServiceRetrofit(Context con, ArrayAdapter arrayAdapter, GridView gridView, ImageAdapter imageAdapter){
         this.context = con;
-        final String BASE_URL = "http://localhost:8080/";
+        final String BASE_URL = "http://10.0.2.2:8080/";
         this.retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
         this.endpoints = retrofit.create(ImageEndpoints.class);
         this.gridView = gridView;
@@ -50,14 +51,10 @@ public class ImageNetworkServiceRetrofit implements ImageNetworkService {
             // them into an image adapter and display the images in the UI.
             @Override
             public void onResponse(Call<List<String>> call, Response<List<String>> response) {
+                Toast.makeText(context, "Got a response!", Toast.LENGTH_LONG).show();
                 if(response.body() != null){
-                    List<String> imageUrls = response.body();
-
-                    // *** FOR TESTING!!! ***
-                    imageUrls.add("fakeUrlOne");
-                    imageUrls.add("fakeUrlTwo");
-                    imageUrls.add("fakeUrlThree");
-
+                    ArrayList<String> imageUrls = (ArrayList<String>) response.body();
+                    Toast.makeText(context, imageUrls.toString(), Toast.LENGTH_LONG).show();
                     imageAdapter = new ImageAdapter(context, imageUrls);
                     gridView.setAdapter(imageAdapter);
                 }

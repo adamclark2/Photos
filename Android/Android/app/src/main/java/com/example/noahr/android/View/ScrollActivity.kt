@@ -6,6 +6,7 @@ import com.example.noahr.android.R
 import android.widget.GridView
 import android.widget.ArrayAdapter
 import android.widget.ListAdapter
+import android.widget.Toast
 import com.example.noahr.android.Adapter.ImageAdapter
 import com.example.noahr.android.Service.ImageNetworkService
 import com.example.noahr.android.Service.ImageNetworkServiceRetrofit
