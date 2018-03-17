@@ -61,7 +61,7 @@ public class ImageAdapter extends BaseAdapter {
         Holder holder = new Holder();
         View rowV;
 
-        rowV = inflater.inflate(R.layout.scrollRow, null);
+        rowV = inflater.inflate(R.layout.scroll_row, null);
         holder.sender = (TextView) rowV.findViewById(R.id.captionXML);
         holder.imgV = (ImageView) rowV.findViewById(R.id.imgXML);
         //Picasso.with(mContext)
