@@ -14,6 +14,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -50,5 +51,21 @@ public class ImageController {
             response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
             return new byte[0];
         }
+    }
+
+    /**
+     * Return a list of strings, which are URLs to actual images stored somewhere.  This is a dumb method for
+     * testing purposes lol.
+     * @return a list of strings, in JSON formatS
+     */
+    @RequestMapping(
+            value = "/imagesUrls",
+            method = RequestMethod.GET,
+            produces = "application/json")
+    public String getImagesWithUrls(){
+        Gson g = (new GsonBuilder().setPrettyPrinting().create());
+        List<String> imageUrls = new ArrayList<>();
+        // ADD URLS TO THIS LIST!!! ^
+        return g.toJson(imageUrls);
     }
 }
