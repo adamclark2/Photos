@@ -2,6 +2,7 @@ package com.example.Photos.Controller;
 
 import com.example.Photos.Model.ImageProvider;
 import com.example.Photos.Presentation.ImageMetadata;
+import com.example.Photos.Service.ImageService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
@@ -64,8 +65,10 @@ public class ImageController {
             produces = "application/json")
     public String getImagesWithUrls(){
         Gson g = (new GsonBuilder().setPrettyPrinting().create());
-        List<String> imageUrls = new ArrayList<>();
-        // ADD URLS TO THIS LIST!!! ^
+
+        // Using a service, we create a list of the URLs of all the images, and return them to caller
+        ImageService imageService = new ImageService();
+        List<String> imageUrls = imageService.getAllImageUrls();
         return g.toJson(imageUrls);
     }
 }
