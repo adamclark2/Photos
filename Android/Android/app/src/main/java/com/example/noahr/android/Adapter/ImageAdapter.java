@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.noahr.android.R;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -62,11 +64,11 @@ public class ImageAdapter extends BaseAdapter {
         View rowV;
 
         rowV = inflater.inflate(R.layout.scroll_row, null);
-        holder.sender = (TextView) rowV.findViewById(R.id.captionXML);
-        holder.imgV = (ImageView) rowV.findViewById(R.id.imgXML);
-        //Picasso.with(mContext)
-        //        .load(urls.get(position) + ".png")
-        //        .into(holder.imgV);
+        holder.sender = rowV.findViewById(R.id.captionXML);
+        holder.imgV = rowV.findViewById(R.id.imgXML);
+        Picasso.get()
+                .load(urls.get(position) + ".png")
+                .into(holder.imgV);
 
         holder.sender.setText("AnimeBoi247");
         holder.button = (Button) rowV.findViewById(R.id.voteButton);

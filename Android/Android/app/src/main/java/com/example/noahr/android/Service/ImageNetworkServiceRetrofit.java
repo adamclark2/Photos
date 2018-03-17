@@ -52,6 +52,12 @@ public class ImageNetworkServiceRetrofit implements ImageNetworkService {
             public void onResponse(Call<List<String>> call, Response<List<String>> response) {
                 if(response.body() != null){
                     List<String> imageUrls = response.body();
+
+                    // *** FOR TESTING!!! ***
+                    imageUrls.add("fakeUrlOne");
+                    imageUrls.add("fakeUrlTwo");
+                    imageUrls.add("fakeUrlThree");
+
                     imageAdapter = new ImageAdapter(context, imageUrls);
                     gridView.setAdapter(imageAdapter);
                 }
