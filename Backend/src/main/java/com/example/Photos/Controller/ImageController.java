@@ -5,7 +5,6 @@ import com.example.Photos.Presentation.ImageMetadata;
 import com.example.Photos.Service.ImageService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import org.springframework.web.bind.annotation.*;
 
 import javax.imageio.ImageIO;
@@ -40,6 +39,7 @@ public class ImageController {
             method = RequestMethod.GET,
             produces = "image/jpeg")
     public byte[] getImage(@PathVariable int id, @PathVariable int width, @PathVariable int height, @PathVariable String format, HttpServletResponse response){
+        System.out.println("Should be generating images...");
         format = format.toLowerCase();
         if(format.equals("jpg")|format.equals("jpeg")|format.equals("png")) {
             try {
@@ -60,15 +60,31 @@ public class ImageController {
      * @return a list of strings, in JSON formatS
      */
     @RequestMapping(
-            value = "/imagesUrls",
+            value = "/imageurls",
             method = RequestMethod.GET,
             produces = "application/json")
     public String getImagesWithUrls(){
         Gson g = (new GsonBuilder().setPrettyPrinting().create());
 
+        // *** FOR TESTING LOL ***
+
+        List<String> testUrls = new ArrayList<>();
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
+
+        return g.toJson(testUrls);
+
         // Using a service, we create a list of the URLs of all the images, and return them to caller
-        ImageService imageService = new ImageService();
-        List<String> imageUrls = imageService.getAllImageUrls();
-        return g.toJson(imageUrls);
+        //ImageService imageService = new ImageService();
+        //List<String> imageUrls = imageService.getAllImageUrls();
+        //return g.toJson(imageUrls);
     }
 }
