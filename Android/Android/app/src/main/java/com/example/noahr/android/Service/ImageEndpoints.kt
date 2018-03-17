@@ -10,8 +10,8 @@ import retrofit2.http.Path
 
 interface ImageEndpoints {
 
-    /*
-        Get a list of the URLs of the images stored remotely
+    /**
+     * Return the URLs of all the images stored remotely
      */
     @GET("{images}")
     fun getImages(): Call<List<String>>
