@@ -1,6 +1,8 @@
-package com.example.Photos.Persistence;
+package com.example.Photos.Persistence.Model;
 
 import com.example.Photos.Model.Image;
+import com.example.Photos.Persistence.GenericDao;
+
 import java.util.List;
 
 /*
