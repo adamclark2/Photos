@@ -5,7 +5,7 @@ package com.example.noahr.android.Model
  */
 
 /*
-    A class to model a single image, containing data and functionality typically
-    associate with an image.
+A class to model a single image, containing data and functionality typically
+associate with an image.
  */
 class Image(var sender: String, var timeStamp: String, var votes: Long, var imageBytes: ByteArray)

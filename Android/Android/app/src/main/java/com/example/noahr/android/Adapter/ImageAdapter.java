@@ -11,9 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.noahr.android.R;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Created by noahr on 3/16/2018.
