@@ -19,7 +19,7 @@ public class InMemoryImageProvider implements ImageProvider {
         ArrayList<ImageMetadata> arr = new ArrayList<>();
 
         for(int i = 0; i < 200;i++){
-            arr.add(new ImageMetadata(i, "Some Cool abstract image"));
+            arr.add(new ImageMetadata(i, "Some Cool abstract image", "images/" + i + "500x500.jpg"));
         }
 
         if(pageNumber == null || numberOfItemsPerPage ==  null){

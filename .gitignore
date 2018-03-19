@@ -63,3 +63,6 @@ bin/
 
 /*.ser
 /*.json
+*.bin
+*.lock
+*.lock
