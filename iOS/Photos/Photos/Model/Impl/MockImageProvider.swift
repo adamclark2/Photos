@@ -15,27 +15,26 @@ import UIKit.UIImage
  This ImageProvider will return *fake* values to allow for texting
  */
 public class MockImageProvider: ImageProvider{
-    public func getImageList() -> [Int] {
-        return [1, 2, 3, 4, 5, 6, 222]
+    public func getImageList(closure: @escaping ([Int]) -> Void){
+        closure([1,2,3,4,5,6,222])
     }
     
-    public func getImageFromId(id: Int) -> ImageMetadata? {
+    public func getImageFromId(id:Int, closure: @escaping (ImageMetadata) -> Void) -> Void{
         do{
             let json: String = "{\"imageId\":" + String(id) + ", \"imageName\": \"Hello World\" }"
-            return try JSONDecoder.init().decode(ImageMetadata.self, from: json.data(using: .utf8)!)
+            do{
+                closure(try JSONDecoder.init().decode(ImageMetadata.self, from: json.data(using: .utf8)!))
+            }
         } catch _{
             // TODO fix this
-            return nil;
         }
     }
     
-    public func getImageFromMetadata(metadata: ImageMetadata) -> UIImage {
+    public func getImageFromMetadata(metadata: ImageMetadata, closure: @escaping (UIImage) -> Void){
         if(metadata._imageId! % 2 == 0){
-            return #imageLiteral(resourceName: "ic_info_48pt");
+            closure(#imageLiteral(resourceName: "ic_info_48pt"));
         }else{
-            return #imageLiteral(resourceName: "ic_filter_48pt");
+            closure(#imageLiteral(resourceName: "ic_filter_48pt"));
         }
     }
-    
-    
 }

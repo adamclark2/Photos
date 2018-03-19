@@ -12,8 +12,10 @@ class ImageViewController: UIViewController {
 
     @IBOutlet var theLabel: UILabel!
     @IBOutlet var theImageView: UIImageView!
+    @IBOutlet weak var Spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -26,6 +28,8 @@ class ImageViewController: UIViewController {
     
     public func setImage(image: UIImage){
         loadViewIfNeeded()
+        Spinner.isHidden = true;
+        theImageView.isHidden = false;
         theImageView.image = image
     }
     

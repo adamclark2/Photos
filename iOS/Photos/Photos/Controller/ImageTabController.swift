@@ -14,18 +14,32 @@ class ImageTabController: UIViewController {
     /// Handle loading the view
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addImages();
+    }
+    
+    func addImages(){
         let imgPro: ImageProvider = ImageProviderFactory.getImageProvider();
-        let arr: [Int] = imgPro.getImageList();
-        
         let storyBoard: UIStoryboard = UIStoryboard.init(name: "ImageView", bundle: nil)
-        for(index, element) in arr.enumerated(){
-            let controller: ImageViewController = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController;
-            
-            controller.setLabelText(text: (imgPro.getImageFromId(id: element)?._imageName)! +  "  id:" + String(element));
-            controller.setImage(image: imgPro.getImageFromMetadata(metadata: imgPro.getImageFromId(id: element)!))
-            
-            stackView.addArrangedSubview(controller.view)
+        
+        let loadCtrl = storyBoard.instantiateViewController(withIdentifier: "Loading")
+        stackView.addArrangedSubview(loadCtrl.view)
+        
+        ImageProviderFactory.getImageProvider().getImageList(closure: {(arr) -> Void in
+            for(_, element) in arr.enumerated(){
+                let controller: ImageViewController = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController;
+                imgPro.getImageFromId(id: element, closure: {meta -> Void in
+                    controller.setLabelText(text: (meta._imageName)! +  "  id:" + String(element));
+                    imgPro.getImageFromMetadata(metadata: meta, closure: {(img: UIImage) -> Void in
+                        controller.setImage(image: img);
+                        self.stackView.addArrangedSubview(controller.view)
+                    });
+                });
+            }});
+        
+        DispatchQueue.main.async {
+            let ms: UInt32 = 1000;
+            usleep(1250 * ms);
+            loadCtrl.view!.isHidden = true;
         }
     }
 

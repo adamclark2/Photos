@@ -20,6 +20,8 @@
 		D2A78F95205B3CFB0052AD28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A78F93205B3CFB0052AD28 /* LaunchScreen.storyboard */; };
 		D2A78FA0205B3CFB0052AD28 /* PhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A78F9F205B3CFB0052AD28 /* PhotosTests.swift */; };
 		D2A78FAB205B3CFB0052AD28 /* PhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A78FAA205B3CFB0052AD28 /* PhotosUITests.swift */; };
+		D2AC2910205FE9A3005B2B59 /* URLImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC290F205FE9A3005B2B59 /* URLImageProvider.swift */; };
+		D2AC2912205FE9E7005B2B59 /* URLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC2911205FE9E7005B2B59 /* URLProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		D2A78FA6205B3CFB0052AD28 /* PhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A78FAA205B3CFB0052AD28 /* PhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosUITests.swift; sourceTree = "<group>"; };
 		D2A78FAC205B3CFB0052AD28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2AC290F205FE9A3005B2B59 /* URLImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageProvider.swift; sourceTree = "<group>"; };
+		D2AC2911205FE9E7005B2B59 /* URLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				D21B01CC205C099D002669BF /* Impl */,
 				D21B01CB205C0990002669BF /* Protocol */,
 				D21B01C9205C07B0002669BF /* ImageMetadata.swift */,
+				D2AC2911205FE9E7005B2B59 /* URLProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D21B01CD205C09B8002669BF /* MockImageProvider.swift */,
+				D2AC290F205FE9A3005B2B59 /* URLImageProvider.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -330,6 +336,8 @@
 				D21B01D7205C1049002669BF /* ImageTabController.swift in Sources */,
 				D21B01C8205C0717002669BF /* ImageProvider.swift in Sources */,
 				D21B01D5205C0FA6002669BF /* ImageViewController.swift in Sources */,
+				D2AC2910205FE9A3005B2B59 /* URLImageProvider.swift in Sources */,
+				D2AC2912205FE9E7005B2B59 /* URLProvider.swift in Sources */,
 				D21B01D1205C0BCF002669BF /* ImageProviderFactory.swift in Sources */,
 				D21B01CA205C07B0002669BF /* ImageMetadata.swift in Sources */,
 				D2A78F8B205B3CFB0052AD28 /* AppDelegate.swift in Sources */,

@@ -22,11 +22,11 @@ import UIKit.UIImage
 public protocol ImageProvider{
     
     /// Get a list of images that should be displayed to the user
-    func getImageList() -> [Int];
+    func getImageList(closure: @escaping ([Int]) -> Void);
     
     /// Given an id from wherever (getImageList() or ImageMetadata) get ImageMetadata
-    func getImageFromId(id:Int) -> ImageMetadata?;
+    func getImageFromId(id:Int, closure: @escaping (ImageMetadata) -> Void) -> Void;
     
     /// Get Image from a MetadataObject
-    func getImageFromMetadata(metadata: ImageMetadata) -> UIImage;
+    func getImageFromMetadata(metadata: ImageMetadata, closure: @escaping (UIImage) -> Void);
 }
