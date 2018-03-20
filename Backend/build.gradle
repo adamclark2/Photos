@@ -27,7 +27,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/com.google.code.gson/gson
 
 	compile('org.springframework.boot:spring-boot-starter-web',
-			'com.google.code.gson:gson:2.8.0')
+			'com.google.code.gson:gson:2.8.0',
+			'javax.inject:javax.inject:1')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
