@@ -4,6 +4,13 @@
 
 tomcat
 
+# XCode
+*.xcodeproj/
+*.xcworkspace/
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
+
 #
 # Default excludes
 #
