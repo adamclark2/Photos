@@ -22,7 +22,7 @@ import UIKit.UIImage
 public protocol ImageProvider{
     
     /// Get a list of images that should be displayed to the user
-    func getImageList(closure: @escaping ([Int]) -> Void);
+    func getImageList(closure: @escaping ([ImageMetadata]) -> Void);
     
     /// Given an id from wherever (getImageList() or ImageMetadata) get ImageMetadata
     func getImageFromId(id:Int, closure: @escaping (ImageMetadata) -> Void) -> Void;

@@ -20,7 +20,7 @@ public class URLProvider {
     }
     
     public func getImagesUrl() -> URL{
-        return URL(string: self.getBaseUrl() + "/images")!;
+        return URL(string: self.getBaseUrl() + "/images?pageNumber=0&numberOfItemsPerPage=12")!;
     }
     
     public func getMetadataUrl(id: Int) -> URL{

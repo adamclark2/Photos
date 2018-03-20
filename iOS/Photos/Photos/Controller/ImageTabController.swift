@@ -12,6 +12,7 @@ class ImageTabController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     /// Handle loading the view
+    @IBOutlet weak var stackHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         addImages();
@@ -25,22 +26,33 @@ class ImageTabController: UIViewController {
         stackView.addArrangedSubview(loadCtrl.view)
         
         ImageProviderFactory.getImageProvider().getImageList(closure: {(arr) -> Void in
-            for(_, element) in arr.enumerated(){
+            for(_, meta) in arr.enumerated(){
                 let controller: ImageViewController = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController;
-                imgPro.getImageFromId(id: element, closure: {meta -> Void in
-                    controller.setLabelText(text: (meta._imageName)! +  "  id:" + String(element));
-                    imgPro.getImageFromMetadata(metadata: meta, closure: {(img: UIImage) -> Void in
+                NSLog(meta._imageName!)
+                controller.setLabelText(text: (meta._imageName)! +  "  \nid:" + String(describing: meta._imageId));
+                imgPro.getImageFromMetadata(metadata: meta, closure: {(img: UIImage) -> Void in
+                    DispatchQueue.main.async {
                         controller.setImage(image: img);
                         self.stackView.addArrangedSubview(controller.view)
-                    });
+                        
+                        // See URLImageProvider.getImageFromMetadata()
+                        // This height there is 200
+                        self.stackHeight.constant += 300;
+                        self.view!.setNeedsLayout()
+                        self.view.setNeedsUpdateConstraints()
+                    }
                 });
-            }});
-        
-        DispatchQueue.main.async {
-            let ms: UInt32 = 1000;
-            usleep(1250 * ms);
-            loadCtrl.view!.isHidden = true;
-        }
+            }
+            
+            // After we got the array
+            // hide the load
+            DispatchQueue.main.async {
+                let ms: UInt32 = 1000;
+                usleep(1250 * ms);
+                loadCtrl.view!.isHidden = true;
+            }
+        });
+    
     }
 
     override func didReceiveMemoryWarning() {

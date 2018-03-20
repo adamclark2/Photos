@@ -27,15 +27,20 @@ class ImageViewController: UIViewController {
     }
     
     public func setImage(image: UIImage){
-        loadViewIfNeeded()
-        Spinner.isHidden = true;
-        theImageView.isHidden = false;
-        theImageView.image = image
+        // All this MUST be done on main
+        DispatchQueue.main.async {
+            self.loadViewIfNeeded()
+            self.Spinner.isHidden = true;
+            self.theImageView.isHidden = false;
+            self.theImageView.image = image
+        }
     }
     
     public func setLabelText(text: String){
-        loadViewIfNeeded()
-        theLabel.text = text
+        DispatchQueue.main.async {
+            self.loadViewIfNeeded()
+            self.theLabel.text = text
+        }
     }
     
 

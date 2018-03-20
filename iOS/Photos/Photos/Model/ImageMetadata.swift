@@ -10,7 +10,8 @@ import Foundation
 
 public class ImageMetadata: Codable{
     private var imageId: Int? = nil;
-    private var imageName: String? = nil;
+    private var title: String? = nil;
+    private var url: String? = nil;
     
     /// get the ImageId
     public var _imageId: Int?{
@@ -19,7 +20,7 @@ public class ImageMetadata: Codable{
     
     /// get the Image Name
     public var _imageName: String?{
-        get{return imageName}
+        get{return title}
     }
     
     public init(){

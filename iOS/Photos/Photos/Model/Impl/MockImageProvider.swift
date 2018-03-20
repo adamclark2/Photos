@@ -15,8 +15,8 @@ import UIKit.UIImage
  This ImageProvider will return *fake* values to allow for texting
  */
 public class MockImageProvider: ImageProvider{
-    public func getImageList(closure: @escaping ([Int]) -> Void){
-        closure([1,2,3,4,5,6,222])
+    public func getImageList(closure: @escaping ([ImageMetadata]) -> Void){
+        
     }
     
     public func getImageFromId(id:Int, closure: @escaping (ImageMetadata) -> Void) -> Void{

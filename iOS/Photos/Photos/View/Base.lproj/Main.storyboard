@@ -50,42 +50,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tiR-Sb-Kd4">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="tiR-Sb-Kd4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ayz-qA-UM6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                    <stackView opaque="NO" contentMode="top" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ayz-qA-UM6">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1200" id="z1C-c3-qbP"/>
+                                            <constraint firstAttribute="height" priority="1" constant="500" id="H9x-RN-A7Z"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Ayz-qA-UM6" secondAttribute="bottom" id="CSP-2p-ctg"/>
-                                    <constraint firstItem="Ayz-qA-UM6" firstAttribute="top" secondItem="tiR-Sb-Kd4" secondAttribute="top" id="Nu5-MO-tQF"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ayz-qA-UM6" secondAttribute="trailing" id="Sul-7A-436"/>
-                                    <constraint firstItem="Ayz-qA-UM6" firstAttribute="leading" secondItem="tiR-Sb-Kd4" secondAttribute="leading" id="T2e-uN-5CK"/>
+                                    <constraint firstItem="Ayz-qA-UM6" firstAttribute="top" secondItem="tiR-Sb-Kd4" secondAttribute="top" id="KR1-sB-IEq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ayz-qA-UM6" secondAttribute="trailing" id="Y5m-Jt-koL"/>
+                                    <constraint firstItem="Ayz-qA-UM6" firstAttribute="leading" secondItem="tiR-Sb-Kd4" secondAttribute="leading" id="apz-Od-eBT"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ayz-qA-UM6" secondAttribute="bottom" id="hrm-m4-B5A"/>
+                                    <constraint firstItem="Ayz-qA-UM6" firstAttribute="width" secondItem="tiR-Sb-Kd4" secondAttribute="width" id="soa-1K-poC"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Xx2-ff-IiZ" firstAttribute="bottom" secondItem="tiR-Sb-Kd4" secondAttribute="bottom" id="54x-MZ-MO4"/>
-                            <constraint firstItem="Ayz-qA-UM6" firstAttribute="width" secondItem="13g-A0-gnN" secondAttribute="width" id="9gG-wT-bGr"/>
-                            <constraint firstItem="tiR-Sb-Kd4" firstAttribute="top" secondItem="Xx2-ff-IiZ" secondAttribute="top" id="I6s-pV-h6i"/>
-                            <constraint firstItem="Xx2-ff-IiZ" firstAttribute="trailing" secondItem="tiR-Sb-Kd4" secondAttribute="trailing" id="lnA-N6-goh"/>
-                            <constraint firstItem="tiR-Sb-Kd4" firstAttribute="leading" secondItem="Xx2-ff-IiZ" secondAttribute="leading" id="qoF-eo-hN5"/>
+                            <constraint firstItem="tiR-Sb-Kd4" firstAttribute="top" secondItem="Xx2-ff-IiZ" secondAttribute="top" id="FPx-S6-IGE"/>
+                            <constraint firstItem="tiR-Sb-Kd4" firstAttribute="leading" secondItem="Xx2-ff-IiZ" secondAttribute="leading" id="JeG-kD-Db9"/>
+                            <constraint firstItem="tiR-Sb-Kd4" firstAttribute="bottom" secondItem="Xx2-ff-IiZ" secondAttribute="bottom" id="KVO-wU-nlT"/>
+                            <constraint firstItem="tiR-Sb-Kd4" firstAttribute="trailing" secondItem="Xx2-ff-IiZ" secondAttribute="trailing" id="sYK-Zr-t3c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xx2-ff-IiZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Images" image="ic_filter_48pt" id="RME-dO-9Rq"/>
                     <connections>
+                        <outlet property="stackHeight" destination="H9x-RN-A7Z" id="UaR-sW-nra"/>
                         <outlet property="stackView" destination="Ayz-qA-UM6" id="Ha1-6M-sbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvs-ny-wLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987.5" y="-213.5"/>
+            <point key="canvasLocation" x="2741.5999999999999" y="-248.72563718140933"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yfV-Q3-219">
