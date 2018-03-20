@@ -5,11 +5,11 @@
 tomcat
 
 # XCode
-#*.xcodeproj/
-#*.xcworkspace/
-#*.xcodeproj
-#*.xcworkspace
-#*.xcuserstate
+*.xcodeproj/
+*.xcworkspace/
+*.xcodeproj
+*.xcworkspace
+*.xcuserstate
 
 #
 # Default excludes
