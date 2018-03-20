@@ -52,7 +52,6 @@ class ImageTabController: UIViewController {
                 loadCtrl.view!.isHidden = true;
             }
         });
-    
     }
 
     override func didReceiveMemoryWarning() {

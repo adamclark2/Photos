@@ -4,6 +4,12 @@
 
 tomcat
 
+# XCode
+*.xcodeproj/
+*.xcworkspace/
+*.xcodeproj
+*.xcworkspace
+
 #
 # Default excludes
 #
@@ -63,3 +69,4 @@ bin/
 
 /*.ser
 /*.json
+*.xcuserstate
