@@ -1,0 +1,31 @@
+##############################
+# Dockerfile to run tomcat war
+# bassed of Ubuntu
+##############################
+FROM ubuntu
+
+# We expose port 80 :)
+EXPOSE 80
+
+#################### RUNTIME DEPENDENCIES #################### 
+# Update package list
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils
+
+# Install JVM/JDK, Wget
+RUN apt-get -y install openjdk-9-jdk-headless wget
+
+# Install Tomcat
+RUN wget "http://mirrors.ibiblio.org/apache/tomcat/tomcat-9/v9.0.6/bin/apache-tomcat-9.0.6.tar.gz"
+RUN echo "export CATALINA_HOME=/tomcat"
+RUN tar -xvf apache-tomcat-9.0.6.tar.gz
+
+#################### RUNTIME DEPENDENCIES #################### 
+
+# Entrypoint (Run Tomcat)
+# ENTRYPOINT /apache-tomcat-9.0.6/bin/startup.sh
+
+# You should run 8080, but this can be
+# Overridden
+# 80 in continer to 8080 on host
+CMD ["-p 8080:80"]
