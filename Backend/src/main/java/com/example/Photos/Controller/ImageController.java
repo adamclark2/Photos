@@ -82,7 +82,7 @@ public class ImageController {
 
         return g.toJson(testUrls);
 
-        // Using a service, we create a list of the URLs of all the images, and return them to caller
+        //Using a service, we create a list of the URLs of all the images, and return them to caller
         //ImageService imageService = new ImageService();
         //List<String> imageUrls = imageService.getAllImageUrls();
         //return g.toJson(imageUrls);
