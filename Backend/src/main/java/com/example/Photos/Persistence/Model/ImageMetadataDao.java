@@ -1,7 +1,7 @@
 package com.example.Photos.Persistence.Model;
 
 import com.example.Photos.Persistence.GenericDao;
-import com.example.Photos.Presentation.ImageMetadata;
+import com.example.Photos.Model.ImageMetadata;
 import java.util.List;
 
 /*

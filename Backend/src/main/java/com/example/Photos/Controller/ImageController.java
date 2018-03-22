@@ -1,23 +1,14 @@
 package com.example.Photos.Controller;
 
 import com.example.Photos.Model.ImageProvider;
-import com.example.Photos.Presentation.ImageMetadata;
-import com.example.Photos.Service.ImageService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.imageio.ImageIO;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.Random;
 
 @RestController
 public class ImageController {

@@ -1,7 +1,7 @@
 package com.example.Photos.Service;
 
 import com.example.Photos.Model.Image;
-import com.example.Photos.Presentation.ImageMetadata;
+import com.example.Photos.Model.ImageMetadata;
 import java.util.List;
 
 /*
@@ -14,6 +14,12 @@ public interface ImageService {
      * @return a list of type Metadata
      */
     public List<ImageMetadata> getImageMetadata();
+
+    /**
+     * Generate a list of the urls to the images stored
+     * @return a list of type String
+     */
+    public List<String> getImageUrls();
 
     /**
      * Generate a list of images

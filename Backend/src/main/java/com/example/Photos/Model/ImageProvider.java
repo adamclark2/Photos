@@ -1,6 +1,5 @@
 package com.example.Photos.Model;
 
-import com.example.Photos.Presentation.ImageMetadata;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;

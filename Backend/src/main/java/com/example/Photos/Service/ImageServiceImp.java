@@ -4,10 +4,13 @@ import com.example.Photos.Model.Image;
 import com.example.Photos.Persistence.Model.ImageDao;
 import com.example.Photos.Persistence.InMemoryDao;
 import com.example.Photos.Persistence.Model.ImageMetadataDao;
-import com.example.Photos.Presentation.ImageMetadata;
+import com.example.Photos.Model.ImageMetadata;
+import com.example.Photos.Persistence.MySqlAwsDao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class ImageServiceImp implements ImageService {
 
@@ -15,9 +18,9 @@ public class ImageServiceImp implements ImageService {
     private ImageMetadataDao metadataDao;
 
     public ImageServiceImp(){
-        // We are using an in memory data store at this point...
-        imageDao = new ImageDao(new InMemoryDao());
-        metadataDao = new ImageMetadataDao(new InMemoryDao());
+        // We are using MySQL hosted in AWS at this point...
+        imageDao = new ImageDao(new MySqlAwsDao());
+        metadataDao = new ImageMetadataDao(new MySqlAwsDao());
     }
 
     @Override
@@ -27,6 +30,11 @@ public class ImageServiceImp implements ImageService {
             metadataList.add(i);
         }
         return metadataList;
+    }
+
+    @Override
+    public List<String> getImageUrls() {
+        return metadataDao.getAllImageMetadata().stream().map(e -> e.getUrl()).collect(Collectors.toList());
     }
 
     @Override
