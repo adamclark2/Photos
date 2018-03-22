@@ -1,6 +1,8 @@
 package com.example.Photos.Controller;
 
 import com.example.Photos.Model.ImageProvider;
+import com.example.Photos.Service.ImageService;
+import com.example.Photos.Service.ImageServiceImp;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.springframework.web.bind.annotation.*;
@@ -56,26 +58,6 @@ public class ImageController {
             produces = "application/json")
     public String getImagesWithUrls(){
         Gson g = (new GsonBuilder().setPrettyPrinting().create());
-
-        // *** FOR TESTING LOL ***
-
-        List<String> testUrls = new ArrayList<>();
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-        testUrls.add("http://10.0.2.2:8080/images/1-500x500.jpg");
-
-        return g.toJson(testUrls);
-
-        //Using a service, we create a list of the URLs of all the images, and return them to caller
-        //ImageService imageService = new ImageService();
-        //List<String> imageUrls = imageService.getAllImageUrls();
-        //return g.toJson(imageUrls);
+        return g.toJson(new ImageServiceImp().getImageUrls());
     }
 }

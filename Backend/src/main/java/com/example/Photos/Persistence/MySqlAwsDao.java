@@ -1,6 +1,5 @@
 package com.example.Photos.Persistence;
 
-import com.example.Photos.Persistence.GenericDao;
 import java.util.List;
 
 /*
@@ -16,6 +15,9 @@ public class MySqlAwsDao<T> implements GenericDao {
 
     @Override
     public List<T> getAll() {
+        /*
+         * *** IMPLEMENT THE DATABASE CONNECTING AND GATHERING OF METADATA HERE!
+         */
         return null;
     }
 }
