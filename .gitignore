@@ -4,6 +4,13 @@
 
 tomcat
 
+#Gradle
+.gradle/
+build/
+
+# Common Binary dir
+out/
+
 # XCode
 *.xcodeproj/
 *.xcworkspace/
