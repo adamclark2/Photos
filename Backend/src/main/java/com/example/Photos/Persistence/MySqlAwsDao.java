@@ -7,15 +7,15 @@ import java.util.List;
  * An implementation of the DAO interface that contains specific implementation details
  * regarding database operations on a MySQL database, hosted in AWS.
  */
-public class MySqlAwsDao implements GenericDao {
+public class MySqlAwsDao<T> implements GenericDao {
 
     @Override
-    public Object get(long id) {
+    public T get(long id) {
         return null;
     }
 
     @Override
-    public List getAll() {
+    public List<T> getAll() {
         return null;
     }
 }

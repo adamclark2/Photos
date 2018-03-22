@@ -32,6 +32,11 @@ public class ImageServiceImp implements ImageService {
         return metadataList;
     }
 
+    /**
+     * Return a list of all image URLS stored in memory.  Useful because we want them to lazy
+     * load the corresponding images from the client apps.
+     * @return
+     */
     @Override
     public List<String> getImageUrls() {
         return metadataDao.getAllImageMetadata().stream().map(e -> e.getUrl()).collect(Collectors.toList());
