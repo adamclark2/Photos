@@ -80,3 +80,6 @@ bin/
 *.bin
 *.lock
 *.lock
+*.bin
+*.lock
+*.bin
