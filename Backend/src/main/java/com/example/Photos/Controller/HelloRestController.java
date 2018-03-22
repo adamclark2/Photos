@@ -37,7 +37,8 @@ public class HelloRestController {
 
     public static String doDatabase(){
         try {
-            Connection c = DriverManager.getConnection("jdbc:mysql://" + System.getenv("DATABASE_URL"));
+            Connection c = DriverManager.getConnection("jdbc:mysql://"
+                    + (System.getenv("DATABASE_URL").replace("\"", "")));
             PreparedStatement p = c.prepareStatement("SELECT * FROM helloworld");
             ResultSet rs = p.executeQuery();
 

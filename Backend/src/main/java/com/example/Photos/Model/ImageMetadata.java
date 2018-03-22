@@ -1,68 +1,38 @@
 package com.example.Photos.Model;
 
+import com.example.Photos.Model.Messages.ImageMetadataMessage;
+import com.example.Photos.Model.Messages.ServerMessage;
+
 /*
  * A class to represent the data associated with an image, minus the actual picture itself lol.
  */
-public class ImageMetadata {
-    private long imageId;
-    private String title;
-    private String url;
-    private String timeStamp;
-    private String sender;
-
-    public ImageMetadata(long imageId, String title, String url){
-        this.imageId = imageId;
-        this.title = title;
-        this.url = url;
-    }
+public abstract class ImageMetadata implements ServerMessage<ImageMetadataMessage>{
 
     public ImageMetadata(){}
 
-    public ImageMetadata(long imageId, String title, String url, String timeStamp, String sender) {
-        this.imageId = imageId;
-        this.title = title;
-        this.url = url;
-        this.timeStamp = timeStamp;
-        this.sender = sender;
-    }
+    public abstract long getImageId();
 
-    public long getImageId() {
-        return imageId;
-    }
 
-    public void setImageId(long imageId) {
-        this.imageId = imageId;
-    }
+    public abstract String getTitle();
+    public abstract void setTitle(String title);
 
-    public String getTitle() {
-        return title;
-    }
+    public abstract String getUrl();
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public abstract long getTimeStamp();
+    public abstract void setTimeStamp(long timeStamp);
 
-    public String getUrl() {
-        return url;
-    }
+    public abstract String getSender();
+    public abstract void setSender(String sender);
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+    @Override
+    public ImageMetadataMessage getMessage() {
+        ImageMetadataMessage imm = new ImageMetadataMessage();
+        imm.id = getImageId();
+        imm.imageUrl = System.getenv("S3_BASE_BUCKET").replace("\"", "") + "/" + imm.id + ".png";
+        imm.title = getTitle();
+        imm.sender = getSender();
+        imm.timeStamp = getTimeStamp();
 
-    public String getTimeStamp() {
-        return timeStamp;
-    }
-
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
-    }
-
-    public String getSender() {
-        return sender;
-    }
-
-    public void setSender(String sender) {
-        this.sender = sender;
+        return imm;
     }
 }
