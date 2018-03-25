@@ -31,23 +31,35 @@
                                     <constraint firstAttribute="height" constant="3" id="Eo6-j9-4Ns"/>
                                 </constraints>
                             </view>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yi0-XJ-PgS">
-                                <rect key="frame" x="15" y="33.5" width="170" height="48"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yi0-XJ-PgS">
+                                <rect key="frame" x="15" y="34" width="170" height="136"/>
                             </imageView>
                             <activityIndicatorView contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-Mu-EmJ">
                                 <rect key="frame" x="15" y="37.5" width="170" height="20"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_thumb_up" translatesAutoresizingMaskIntoConstraints="NO" id="tLC-px-98k">
+                                <rect key="frame" x="15" y="171" width="24" height="24"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_thumb_down" translatesAutoresizingMaskIntoConstraints="NO" id="f8d-PW-GJp">
+                                <rect key="frame" x="49" y="171" width="24" height="24"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="tLC-px-98k" firstAttribute="leading" secondItem="dtb-zg-L45" secondAttribute="leading" constant="15" id="2vn-AQ-qAN"/>
                             <constraint firstAttribute="trailing" secondItem="Qow-jp-oSK" secondAttribute="trailing" constant="15" id="5bO-31-q3A"/>
+                            <constraint firstItem="AKS-jo-FVB" firstAttribute="bottom" secondItem="Yi0-XJ-PgS" secondAttribute="bottom" constant="30" id="7LA-Hg-xUg"/>
                             <constraint firstItem="AKS-jo-FVB" firstAttribute="trailing" secondItem="Yi0-XJ-PgS" secondAttribute="trailing" constant="15" id="AfU-kI-ZuN"/>
+                            <constraint firstItem="f8d-PW-GJp" firstAttribute="leading" secondItem="tLC-px-98k" secondAttribute="trailing" constant="10" id="E29-cD-3f5"/>
                             <constraint firstItem="fpu-bo-h2b" firstAttribute="leading" secondItem="AKS-jo-FVB" secondAttribute="leading" constant="15" id="JZK-kK-NNe"/>
+                            <constraint firstAttribute="bottom" secondItem="tLC-px-98k" secondAttribute="bottom" constant="5" id="SNa-JV-FBu"/>
                             <constraint firstItem="wKd-Mu-EmJ" firstAttribute="leading" secondItem="AKS-jo-FVB" secondAttribute="leading" constant="15" id="SSZ-Is-lJW"/>
                             <constraint firstItem="AKS-jo-FVB" firstAttribute="trailing" secondItem="wKd-Mu-EmJ" secondAttribute="trailing" constant="15" id="WlB-Ft-Lcq"/>
                             <constraint firstItem="Qow-jp-oSK" firstAttribute="leading" secondItem="dtb-zg-L45" secondAttribute="leading" constant="15" id="Y0K-nh-eE9"/>
+                            <constraint firstItem="AKS-jo-FVB" firstAttribute="bottom" secondItem="f8d-PW-GJp" secondAttribute="bottom" constant="10" id="YCa-8X-dZM"/>
+                            <constraint firstItem="AKS-jo-FVB" firstAttribute="bottom" secondItem="f8d-PW-GJp" secondAttribute="bottom" constant="5" id="bhh-Ly-Gc0"/>
                             <constraint firstItem="Yi0-XJ-PgS" firstAttribute="leading" secondItem="AKS-jo-FVB" secondAttribute="leading" constant="15" id="eFT-W7-iYi"/>
                             <constraint firstItem="fpu-bo-h2b" firstAttribute="top" secondItem="AKS-jo-FVB" secondAttribute="top" id="fUM-NN-DwP"/>
                             <constraint firstItem="Yi0-XJ-PgS" firstAttribute="top" secondItem="Qow-jp-oSK" secondAttribute="bottom" constant="8" id="gch-5Q-pIL"/>
@@ -67,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NR4-JZ-bGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8.8000000000000007" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="8" y="8.0959520239880067"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NAS-Q7-cY5">
@@ -103,4 +115,8 @@
             <point key="canvasLocation" x="610" y="40"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_thumb_down" width="24" height="24"/>
+        <image name="ic_thumb_up" width="24" height="24"/>
+    </resources>
 </document>

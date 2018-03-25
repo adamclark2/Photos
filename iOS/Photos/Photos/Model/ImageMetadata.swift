@@ -26,4 +26,13 @@ public class ImageMetadata: Codable{
     public init(){
         
     }
+    
+    public static func getDebug() -> ImageMetadata{
+        let data = ImageMetadata();
+        data.imageId = 1;
+        data.title = "Debug"
+        data.url = "http://example.com/images/1.png"
+        
+        return data;
+    }
 }

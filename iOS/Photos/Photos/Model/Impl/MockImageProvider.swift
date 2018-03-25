@@ -16,7 +16,8 @@ import UIKit.UIImage
  */
 public class MockImageProvider: ImageProvider{
     public func getImageList(closure: @escaping ([ImageMetadata]) -> Void){
-        
+        let meta: [ImageMetadata] = [ImageMetadata.getDebug(), ImageMetadata.getDebug()];
+        closure(meta);
     }
     
     public func getImageFromId(id:Int, closure: @escaping (ImageMetadata) -> Void) -> Void{

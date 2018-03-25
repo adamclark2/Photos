@@ -25,6 +25,6 @@ public class ImageProviderFactory{
         The ImageProvider returned could be any implementation, however the implementation is relevant to the application
     */
     public static func getImageProvider() -> ImageProvider{
-        return URLImageProvider();
+        return MockImageProvider();
     }
 }
