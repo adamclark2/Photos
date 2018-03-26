@@ -29,4 +29,7 @@ public protocol ImageProvider{
     
     /// Get Image from a MetadataObject
     func getImageFromMetadata(metadata: ImageMetadata, closure: @escaping (UIImage) -> Void);
+    
+    /// Is the provider available to take requests
+    func isAvailable() -> Bool;
 }

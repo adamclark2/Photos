@@ -25,6 +25,16 @@ class ImageTabController: UIViewController {
         let loadCtrl = storyBoard.instantiateViewController(withIdentifier: "Loading")
         stackView.addArrangedSubview(loadCtrl.view)
         
+        let loadErr = storyBoard.instantiateViewController(withIdentifier: "ConnectionError");
+        loadErr.view.isHidden = true;
+        stackView.addArrangedSubview(loadErr.view);
+        
+        if(!ImageProviderFactory.getImageProvider().isAvailable()){
+            loadErr.view.isHidden = false;
+            // Retry again ... TODO
+            return;
+        }
+        
         ImageProviderFactory.getImageProvider().getImageList(closure: {(arr) -> Void in
             for(_, meta) in arr.enumerated(){
                 let controller: ImageViewController = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController;

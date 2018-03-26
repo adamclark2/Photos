@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -114,8 +114,70 @@
             </objects>
             <point key="canvasLocation" x="610" y="40"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="EQe-mi-Rw6">
+            <objects>
+                <viewController storyboardIdentifier="ConnectionError" id="L5x-3W-GVo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SCM-eO-9fc">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Do You Have An Internet Connection?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgW-41-6p9">
+                                <rect key="frame" x="15" y="284" width="370" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Attempting to Retry" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLx-QC-xoH">
+                                <rect key="frame" x="15" y="330" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ic_cloud_off_48pt" translatesAutoresizingMaskIntoConstraints="NO" id="uDs-5J-A7K">
+                                <rect key="frame" x="15" y="83" width="370" height="196"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1aR-Gv-F6c">
+                                <rect key="frame" x="310" y="331" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Connection Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZ1-0b-pLj">
+                                <rect key="frame" x="15" y="25" width="370" height="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pgW-41-6p9" firstAttribute="top" secondItem="uDs-5J-A7K" secondAttribute="bottom" constant="5" id="7KZ-1Z-lMw"/>
+                            <constraint firstItem="4j7-3D-XpT" firstAttribute="trailing" secondItem="1aR-Gv-F6c" secondAttribute="trailing" constant="70" id="BN3-47-QMZ"/>
+                            <constraint firstItem="uDs-5J-A7K" firstAttribute="top" secondItem="AZ1-0b-pLj" secondAttribute="bottom" constant="5" id="BYZ-8d-3eG"/>
+                            <constraint firstItem="4j7-3D-XpT" firstAttribute="trailing" secondItem="AZ1-0b-pLj" secondAttribute="trailing" constant="15" id="HSk-oe-Z2k"/>
+                            <constraint firstItem="pgW-41-6p9" firstAttribute="leading" secondItem="4j7-3D-XpT" secondAttribute="leading" constant="15" id="Ny5-AT-PCR"/>
+                            <constraint firstItem="gLx-QC-xoH" firstAttribute="leading" secondItem="4j7-3D-XpT" secondAttribute="leading" constant="15" id="Sll-LC-JHA"/>
+                            <constraint firstItem="4j7-3D-XpT" firstAttribute="bottom" secondItem="gLx-QC-xoH" secondAttribute="bottom" constant="5" id="Xly-aY-RwJ"/>
+                            <constraint firstItem="uDs-5J-A7K" firstAttribute="leading" secondItem="4j7-3D-XpT" secondAttribute="leading" constant="15" id="Z2f-j2-XG3"/>
+                            <constraint firstItem="4j7-3D-XpT" firstAttribute="trailing" secondItem="pgW-41-6p9" secondAttribute="trailing" constant="15" id="ar2-Be-jjM"/>
+                            <constraint firstItem="4j7-3D-XpT" firstAttribute="trailing" secondItem="uDs-5J-A7K" secondAttribute="trailing" constant="15" id="cMb-Rj-pDV"/>
+                            <constraint firstItem="AZ1-0b-pLj" firstAttribute="top" secondItem="4j7-3D-XpT" secondAttribute="top" constant="5" id="fxv-RE-em9"/>
+                            <constraint firstItem="gLx-QC-xoH" firstAttribute="top" secondItem="pgW-41-6p9" secondAttribute="bottom" constant="25" id="gpO-m3-lvf"/>
+                            <constraint firstItem="AZ1-0b-pLj" firstAttribute="leading" secondItem="4j7-3D-XpT" secondAttribute="leading" constant="15" id="kjg-Nc-8NC"/>
+                            <constraint firstItem="4j7-3D-XpT" firstAttribute="bottom" secondItem="1aR-Gv-F6c" secondAttribute="bottom" constant="5" id="u8x-xg-bg3"/>
+                            <constraint firstItem="1aR-Gv-F6c" firstAttribute="leading" secondItem="gLx-QC-xoH" secondAttribute="trailing" constant="25" id="y1J-vj-7rx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4j7-3D-XpT"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="400" height="400"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2b-QZ-z7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111.71875" y="434.1796875"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ic_cloud_off_48pt" width="48" height="48"/>
         <image name="ic_thumb_down" width="24" height="24"/>
         <image name="ic_thumb_up" width="24" height="24"/>
     </resources>

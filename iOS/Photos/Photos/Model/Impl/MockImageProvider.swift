@@ -38,4 +38,8 @@ public class MockImageProvider: ImageProvider{
             closure(#imageLiteral(resourceName: "ic_filter_48pt"));
         }
     }
+    
+    public func isAvailable() -> Bool {
+        return false;
+    }
 }

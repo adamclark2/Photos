@@ -9,7 +9,7 @@
 import Foundation
 import UIKit.UIImage
 
-
+/*
 public class URLImageProvider : ImageProvider{
     public func getImageFromMetadata(metadata: ImageMetadata, closure: @escaping (UIImage) -> Void) {
         URLSession.shared.dataTask(with:
@@ -48,4 +48,4 @@ public class URLImageProvider : ImageProvider{
         }.resume()
     }
     
-}
+}*/
