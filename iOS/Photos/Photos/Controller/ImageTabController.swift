@@ -38,6 +38,7 @@ class ImageTabController: UIViewController {
         ImageProviderFactory.getImageProvider().getImageList(closure: {(arr) -> Void in
             for(_, meta) in arr.enumerated(){
                 let controller: ImageViewController = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController;
+                controller.setId(id: meta._imageId!)
                 NSLog(meta._imageName!)
                 controller.setLabelText(text: (meta._imageName)! +  "  \nid:" + String(describing: meta._imageId));
                 imgPro.getImageFromMetadata(metadata: meta, closure: {(img: UIImage) -> Void in

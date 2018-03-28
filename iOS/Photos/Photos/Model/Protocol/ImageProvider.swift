@@ -32,4 +32,7 @@ public protocol ImageProvider{
     
     /// Is the provider available to take requests
     func isAvailable() -> Bool;
+    
+    /// upvote something
+    func doUpvote(id: Int) -> Int
 }

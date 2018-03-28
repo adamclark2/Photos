@@ -9,18 +9,29 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-
+    
+    @IBOutlet weak var btnUpVote: UIButton!
+    @IBOutlet weak var btnDownVotes: UIButton!
+    @IBOutlet weak var labelUpVotes: UILabel!
+    @IBOutlet weak var labelDownVotes: UILabel!
+    
     @IBOutlet var theLabel: UILabel!
     @IBOutlet var theImageView: UIImageView!
+
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        btnUpVote.setTitle("Hello", for: UIControlState.normal)
+        labelUpVotes.text = "55-";
+        
+        self.btnUpVote.addTarget(self, action: #selector(self.onTapUpVote), for: UIControlEvents.allEvents)
     }
-
+    
+    @objc func onTapUpVote(_ sender: AnyClass?) {
+        NSLog("Hellow");
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,6 +45,11 @@ class ImageViewController: UIViewController {
             self.theImageView.isHidden = false;
             self.theImageView.image = image
         }
+    }
+    
+    public func setId(id: Int){
+        self.loadViewIfNeeded()
+        (self.btnUpVote as! UpVoteButton).setIdOfImage(id: id);
     }
     
     public func setLabelText(text: String){

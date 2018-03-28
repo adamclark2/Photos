@@ -40,6 +40,10 @@ public class MockImageProvider: ImageProvider{
     }
     
     public func isAvailable() -> Bool {
-        return false;
+        return true;
+    }
+    
+    public func doUpvote(id: Int) -> Int {
+        return 999;
     }
 }
