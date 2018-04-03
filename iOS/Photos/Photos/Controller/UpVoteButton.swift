@@ -12,9 +12,11 @@ import UIKit
 public class UpVoteButton : UIButton{
     
     private var idOfImage: Int = 0;
+    private var upvoteLabel: UILabel? = nil;
     
-    public func setIdOfImage(id: Int){
+    public func setRefs(id: Int, label: UILabel){
         self.idOfImage = id;
+        self.upvoteLabel = label;
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -23,7 +25,12 @@ public class UpVoteButton : UIButton{
     }
     
     @objc public func doPush(_ sender: AnyClass?){
-        let num = ImageProviderFactory.getImageProvider().doUpvote(id: self.idOfImage);
-        NSLog("Has done vote")
+        ImageProviderFactory.getImageProvider().doUpvote(id: self.idOfImage);
+        ImageProviderFactory.getImageProvider().getImageFromId(id: idOfImage, closure: { (e: ImageMetadata) -> Void in
+            if(self.upvoteLabel != nil){
+                self.upvoteLabel?.text = String(e.UpVotes);
+            }
+        });
     }
+    
 }

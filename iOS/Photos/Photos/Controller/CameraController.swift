@@ -35,6 +35,9 @@ public class CameraController : UIViewController,UINavigationControllerDelegate,
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage;
         imageView.image = image;
         imageView.isHidden = false;
+        
+        ImageProviderFactory.getImageProvider().add(title: "Hello Addition", image: image)
+        
         imagePicker.dismiss(animated: true, completion: nil)
     }
     

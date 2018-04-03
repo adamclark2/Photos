@@ -22,14 +22,6 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnUpVote.setTitle("Hello", for: UIControlState.normal)
-        labelUpVotes.text = "55-";
-        
-        self.btnUpVote.addTarget(self, action: #selector(self.onTapUpVote), for: UIControlEvents.allEvents)
-    }
-    
-    @objc func onTapUpVote(_ sender: AnyClass?) {
-        NSLog("Hellow");
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,9 +39,14 @@ class ImageViewController: UIViewController {
         }
     }
     
+    public func setVotes(up: Int, down: Int){
+        labelUpVotes.text = String(up);
+        labelDownVotes.text = String(down);
+    }
+    
     public func setId(id: Int){
         self.loadViewIfNeeded()
-        (self.btnUpVote as! UpVoteButton).setIdOfImage(id: id);
+        (self.btnUpVote as! UpVoteButton).setRefs(id: id, label: labelUpVotes)
     }
     
     public func setLabelText(text: String){

@@ -10,8 +10,9 @@ import Foundation
 
 public class ImageMetadata: Codable{
     private var imageId: Int? = nil;
-    private var title: String? = nil;
-    private var url: String? = nil;
+    private var title: String = "";
+    private var url: String = "";
+    private var upvotes: Int = 0;
     
     /// get the ImageId
     public var _imageId: Int?{
@@ -19,12 +20,28 @@ public class ImageMetadata: Codable{
     }
     
     /// get the Image Name
-    public var _imageName: String?{
+    public var _imageName: String{
         get{return title}
+    }
+    
+    /// get the Image Name
+    public var URL: String{
+        get{return url}
+    }
+    
+    public var UpVotes: Int{
+        get{return self.upvotes}
     }
     
     public init(){
         
+    }
+    
+    public init(imageId: Int, title: String, url: String, upvotes: Int){
+        self.imageId = imageId;
+        self.title = title;
+        self.url = url;
+        self.upvotes = upvotes;
     }
     
     public static func getDebug() -> ImageMetadata{

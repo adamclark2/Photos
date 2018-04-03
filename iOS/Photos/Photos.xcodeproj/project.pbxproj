@@ -94,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D208B36620741A2B00043534 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D2B397B920739EAE0076C40D /* MockImageProvider.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		D2B397B620739EAE0076C40D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +117,8 @@
 		D2B397B720739EAE0076C40D /* Impl */ = {
 			isa = PBXGroup;
 			children = (
+				D208B36620741A2B00043534 /* Mocks */,
 				D2B397B820739EAE0076C40D /* URLImageProvider.swift */,
-				D2B397B920739EAE0076C40D /* MockImageProvider.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";

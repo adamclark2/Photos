@@ -39,16 +39,19 @@ class ImageTabController: UIViewController {
             for(_, meta) in arr.enumerated(){
                 let controller: ImageViewController = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController;
                 controller.setId(id: meta._imageId!)
-                NSLog(meta._imageName!)
-                controller.setLabelText(text: (meta._imageName)! +  "  \nid:" + String(describing: meta._imageId));
+                controller.setLabelText(text: (meta._imageName));
+                controller.setVotes(up: meta.UpVotes, down: 0);
+                self.stackView.addArrangedSubview(controller.view)
+                
+                // See URLImageProvider.getImageFromMetadata()
+                // This height there is 200
+                self.stackHeight.constant += 400;
+                self.view!.setNeedsLayout()
+                self.view.setNeedsUpdateConstraints()
+                
                 imgPro.getImageFromMetadata(metadata: meta, closure: {(img: UIImage) -> Void in
                     DispatchQueue.main.async {
                         controller.setImage(image: img);
-                        self.stackView.addArrangedSubview(controller.view)
-                        
-                        // See URLImageProvider.getImageFromMetadata()
-                        // This height there is 200
-                        self.stackHeight.constant += 300;
                         self.view!.setNeedsLayout()
                         self.view.setNeedsUpdateConstraints()
                     }
@@ -70,7 +73,15 @@ class ImageTabController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func doRefresh(_ sender: Any) {
+        stackHeight.constant = 0;
+        for v in stackView.arrangedSubviews {
+            v.isHidden = true;
+            stackView.removeArrangedSubview(v);
+        }
+        addImages();
+    }
+    
     /*
     // MARK: - Navigation
 

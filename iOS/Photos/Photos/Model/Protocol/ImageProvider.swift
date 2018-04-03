@@ -34,5 +34,8 @@ public protocol ImageProvider{
     func isAvailable() -> Bool;
     
     /// upvote something
-    func doUpvote(id: Int) -> Int
+    func doUpvote(id: Int)
+    
+    /// Add something
+    func add(title: String, image: UIImage) -> Void
 }

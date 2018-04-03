@@ -16,7 +16,7 @@ import UIKit.UIImage
  * The implementation is not relevant
  */
 public class ImageProviderFactory{
-    
+    private static let ip = MockImageProvider();
     /**
         Get an ImageProvider
      
@@ -25,6 +25,6 @@ public class ImageProviderFactory{
         The ImageProvider returned could be any implementation, however the implementation is relevant to the application
     */
     public static func getImageProvider() -> ImageProvider{
-        return MockImageProvider();
+        return self.ip;
     }
 }
