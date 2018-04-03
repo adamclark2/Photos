@@ -11,13 +11,6 @@ build/
 # Common Binary dir
 out/
 
-# XCode
-*.xcodeproj/
-*.xcworkspace/
-*.xcodeproj
-*.xcworkspace
-*.xcuserstate
-
 #
 # Default excludes
 #

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../Photos/Assets.xcassets"
+      name = "Assets.xcassets">
+      <Group
+         location = "group:ic_thumb_down.imageset"
+         name = "ic_thumb_down.imageset">
+         <FileRef
+            location = "group:ic_thumb_down.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:ic_thumb_down_2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:ic_thumb_down_3x.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:AppIcon.appiconset"
+         name = "AppIcon.appiconset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ic_filter_48pt.imageset"
+         name = "ic_filter_48pt.imageset">
+         <FileRef
+            location = "group:ic_filter_48pt_3x.png">
+         </FileRef>
+         <FileRef
+            location = "group:ic_filter_48pt_2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:ic_filter_48pt.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ic_info_48pt.imageset"
+         name = "ic_info_48pt.imageset">
+         <FileRef
+            location = "group:ic_info_48pt_3x.png">
+         </FileRef>
+         <FileRef
+            location = "group:ic_info_48pt_2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:ic_info_48pt.png">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Contents.json">
+      </FileRef>
+      <Group
+         location = "group:ic_cloud_off_48pt.imageset"
+         name = "ic_cloud_off_48pt.imageset">
+         <FileRef
+            location = "group:ic_cloud_off_48pt_3x.png">
+         </FileRef>
+         <FileRef
+            location = "group:ic_cloud_off_48pt_2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:ic_cloud_off_48pt.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:ic_thumb_up.imageset"
+         name = "ic_thumb_up.imageset">
+         <FileRef
+            location = "group:ic_thumb_up.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:ic_thumb_up_2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:ic_thumb_up_3x.png">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:../Photos/Controller"
+      name = "Controller">
+      <FileRef
+         location = "group:ImageTabController.swift">
+      </FileRef>
+      <FileRef
+         location = "group:UpVoteButton.swift">
+      </FileRef>
+      <FileRef
+         location = "group:ImageViewController.swift">
+      </FileRef>
+      <FileRef
+         location = "group:AppDelegate.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:../Photos/Model"
+      name = "Model">
+      <Group
+         location = "group:Impl"
+         name = "Impl">
+         <FileRef
+            location = "group:URLImageProvider.swift">
+         </FileRef>
+         <FileRef
+            location = "group:MockImageProvider.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:ImageMetadata.swift">
+      </FileRef>
+      <Group
+         location = "group:Protocol"
+         name = "Protocol">
+         <FileRef
+            location = "group:ImageProvider.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:URLProvider.swift">
+      </FileRef>
+      <Group
+         location = "group:Factory"
+         name = "Factory">
+         <FileRef
+            location = "group:ImageProviderFactory.swift">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:../Photos/View"
+      name = "View">
+      <FileRef
+         location = "group:LaunchScreen.storyboard">
+      </FileRef>
+      <FileRef
+         location = "group:ImageView.storyboard">
+      </FileRef>
+      <FileRef
+         location = "group:Main.storyboard">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "self:Photos.xcodeproj">
+   </FileRef>
+</Workspace>

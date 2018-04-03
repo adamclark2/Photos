@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13526" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kY4-Ku-J9b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kY4-Ku-J9b">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXV-ss-agB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1987.5" y="526.5"/>
+            <point key="canvasLocation" x="2593" y="1203"/>
         </scene>
         <!--Channels-->
         <scene sceneID="wRd-L4-IfZ">
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zpR-UV-g5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3196" y="9"/>
+            <point key="canvasLocation" x="3054" y="589"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tUs-zb-kvd">
@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PfW-xz-2We" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4141.6000000000004" y="-85.007496251874073"/>
+            <point key="canvasLocation" x="4234" y="-137"/>
         </scene>
         <!--Images-->
         <scene sceneID="Dgm-UO-XYX">
@@ -181,7 +181,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zvs-ny-wLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2361" y="-524"/>
+            <point key="canvasLocation" x="126" y="-824"/>
+        </scene>
+        <!--Camera-->
+        <scene sceneID="e25-Ib-1Ox">
+            <objects>
+                <viewController id="PY2-Oo-VXQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pzg-WL-Ys0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Goes Here!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95m-WF-2ka">
+                                <rect key="frame" x="15" y="35" width="345" height="21"/>
+                                <color key="backgroundColor" red="0.8442835616514397" green="0.91893843098440253" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="95m-WF-2ka" firstAttribute="leading" secondItem="6RG-aJ-gnW" secondAttribute="leading" constant="15" id="NQX-Ro-7r2"/>
+                            <constraint firstItem="6RG-aJ-gnW" firstAttribute="trailing" secondItem="95m-WF-2ka" secondAttribute="trailing" constant="15" id="zDK-zg-quc"/>
+                            <constraint firstItem="95m-WF-2ka" firstAttribute="top" secondItem="6RG-aJ-gnW" secondAttribute="top" constant="15" id="zeq-SH-C6k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6RG-aJ-gnW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Camera" id="xAS-BM-vyF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QqO-dn-ZSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-216" y="1039"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yfV-Q3-219">
@@ -195,12 +225,13 @@
                     <connections>
                         <segue destination="6qH-a2-k3x" kind="relationship" relationship="viewControllers" id="yv7-r9-JpC"/>
                         <segue destination="EHA-x0-NKE" kind="relationship" relationship="viewControllers" id="1KN-bq-AyK"/>
+                        <segue destination="PY2-Oo-VXQ" kind="relationship" relationship="viewControllers" id="YDU-zC-oYM"/>
                         <segue destination="zmJ-LL-U9N" kind="relationship" relationship="viewControllers" id="N9X-Qh-fFe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sx-rL-LvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="90"/>
+            <point key="canvasLocation" x="1494" y="88"/>
         </scene>
     </scenes>
     <resources>
