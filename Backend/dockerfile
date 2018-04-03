@@ -4,55 +4,72 @@
 ##############################
 FROM ubuntu
 
-#################### SYSTEM DEPENDENCIES #################### 
-# Update package list
+EXPOSE 8080
+ENTRYPOINT runuser -l tomcat -c '\
+            export CATALINA_HOME="/apache-tomcat-9.0.6"; \
+            $CATALINA_HOME/bin/catalina.sh run'
+
+##########################################################################################
+
+# SYSTEM DEPENDENCIES 
+## Update package list
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils
 
-# Install JVM/JDK, wget, unzip
+## Install JVM/JDK, wget, unzip
 RUN apt-get -y install default-jdk wget unzip
 
-# Install Gradle
+## Install Gradle
 RUN wget "https://downloads.gradle.org/distributions/gradle-4.6-bin.zip"
 RUN unzip gradle-4.6-bin.zip
 RUN echo "alias gradle=/gradle-4.6-bin/bin/gradle"
 
-
-
-#################### RUNTIME DEPENDENCIES #################### 
-# Install Tomcat
+# RUNTIME DEPENDENCIES 
+## Install Tomcat
 RUN wget "http://mirrors.ibiblio.org/apache/tomcat/tomcat-9/v9.0.6/bin/apache-tomcat-9.0.6.tar.gz"
 RUN echo "export CATALINA_HOME=/apache-tomcat-9.0.6" >> /root/.bashrc
 RUN tar -xvf apache-tomcat-9.0.6.tar.gz
 
+# CONFIG
+## Disable web-admin and basic stuff
+RUN rm -rf /apache-tomcat-9.0.6/webapps/docs
+RUN rm -rf /apache-tomcat-9.0.6/webapps/examples
+RUN rm -rf /apache-tomcat-9.0.6/webapps/host-manager
+RUN rm -rf /apache-tomcat-9.0.6/webapps/ROOT
+RUN rm -rf /apache-tomcat-9.0.6/webapps/manager
+
+## Create tomcat user
+### use defaults, DO NOT create home dir, is system user (w/o login)
+RUN useradd -M -r tomcat 
+### tomcat specific
+RUN chgrp -R tomcat /apache-tomcat-9.0.6
+RUN chmod -R 750 /apache-tomcat-9.0.6
+RUN chmod -R 760 /apache-tomcat-9.0.6/logs
+RUN chmod 760 /apache-tomcat-9.0.6/logs
+RUN chmod -R 760 /apache-tomcat-9.0.6/temp
+RUN chmod 770 /apache-tomcat-9.0.6/temp
+RUN chmod -R 760 /apache-tomcat-9.0.6/work
+RUN chmod -R 760 /tmp
 
 
-#################### CONFIG INJECTION ####################
-## WARNING! Insecure password/username
-# user/pass
-RUN rm /apache-tomcat-9.0.6/conf/tomcat-users.xml
-RUN rm /apache-tomcat-9.0.6/webapps/manager/META-INF/context.xml
-ADD tomcat-users.xml /apache-tomcat-9.0.6/conf/tomcat-users.xml
-ADD context.xml /apache-tomcat-9.0.6/webapps/manager/META-INF/context.xml
-
-
-
-#################### CODE INJECTION ####################
-ADD * /program/
+# CODE INJECTION
+RUN mkdir /program
+ADD build.gradle /program/build.gradle
 ADD src /program/src
 
-
-#################### BUILD PRODUCTS #################### 
+# BUILD PRODUCTS 
 RUN cd /program && /gradle-4.6/bin/gradle build && /gradle-4.6/bin/gradle bootwar
 
 RUN ls -aR /program
 RUN cp /program/build/libs/program-0.0.1-SNAPSHOT.war /apache-tomcat-9.0.6/webapps/backend.war
+RUN mkdir /apache-tomcat-9.0.6/webapps/ROOT
+RUN cd /apache-tomcat-9.0.6/webapps/ROOT; unzip /apache-tomcat-9.0.6/webapps/backend.war 
+RUN rm apache-tomcat-9.0.6/webapps/backend.war
 
-
-
-#################### Finishing Steps #################### 
-# We expose port 8080
-EXPOSE 8080
-
-# Entrypoint (Run Tomcat)
-ENTRYPOINT /apache-tomcat-9.0.6/bin/catalina.sh run & /bin/bash
+## /sys and /proc can't be chmod'd b/c they
+## are read only
+##
+## This removes write permissions
+## for 'other' on almost
+## the entire filesystem
+RUN chmod -R o-w $(ls / | grep -v sys | grep -v proc)
