@@ -24,6 +24,8 @@
 		D2B397D620739EAF0076C40D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B397C820739EAE0076C40D /* AppDelegate.swift */; };
 		D2B5DABA20739C3200EF2079 /* PhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DAB920739C3200EF2079 /* PhotosTests.swift */; };
 		D2B5DAC520739C3200EF2079 /* PhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DAC420739C3200EF2079 /* PhotosUITests.swift */; };
+		D2C3D7EE20764DFC00DC63D7 /* User Section.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C3D7ED20764DFC00DC63D7 /* User Section.storyboard */; };
+		D2C3D7F02076567100DC63D7 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C3D7EF2076567100DC63D7 /* UserController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		D2B5DAC020739C3200EF2079 /* PhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B5DAC420739C3200EF2079 /* PhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosUITests.swift; sourceTree = "<group>"; };
 		D2B5DAC620739C3200EF2079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2C3D7ED20764DFC00DC63D7 /* User Section.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "User Section.storyboard"; sourceTree = "<group>"; };
+		D2C3D7EF2076567100DC63D7 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 				D2B397C120739EAE0076C40D /* LaunchScreen.storyboard */,
 				D2B397C220739EAE0076C40D /* ImageView.storyboard */,
 				D2B397C320739EAE0076C40D /* Main.storyboard */,
+				D2C3D7ED20764DFC00DC63D7 /* User Section.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				D2B397C620739EAE0076C40D /* UpVoteButton.swift */,
 				D2B397C720739EAE0076C40D /* ImageViewController.swift */,
 				D2B397C820739EAE0076C40D /* AppDelegate.swift */,
+				D2C3D7EF2076567100DC63D7 /* UserController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				D2B397C920739EAF0076C40D /* Assets.xcassets in Resources */,
 				D2B397D020739EAF0076C40D /* LaunchScreen.storyboard in Resources */,
 				D2B397D220739EAF0076C40D /* Main.storyboard in Resources */,
+				D2C3D7EE20764DFC00DC63D7 /* User Section.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +359,7 @@
 				D2B397CE20739EAF0076C40D /* URLProvider.swift in Sources */,
 				D2B397CF20739EAF0076C40D /* ImageProviderFactory.swift in Sources */,
 				D2B397D420739EAF0076C40D /* UpVoteButton.swift in Sources */,
+				D2C3D7F02076567100DC63D7 /* UserController.swift in Sources */,
 				D23515272073AABC0011750C /* CameraController.swift in Sources */,
 				D2B397CC20739EAF0076C40D /* ImageMetadata.swift in Sources */,
 				D2B397D320739EAF0076C40D /* ImageTabController.swift in Sources */,
