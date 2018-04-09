@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0N-D6-yfA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0N-D6-yfA">
                                 <rect key="frame" x="15" y="35" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.7174951424870466" green="0.69475484860515435" blue="0.69062452444752431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -45,11 +45,17 @@
                                 <rect key="frame" x="15" y="150" width="124" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add From Camera"/>
+                                <connections>
+                                    <action selector="cameraAdd:" destination="7W7-LR-YTp" eventType="touchUpInside" id="u8u-qH-Qyj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZT-Hi-UHw">
                                 <rect key="frame" x="242" y="150" width="118" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add From Gallary"/>
+                                <connections>
+                                    <action selector="btnAddImageFromGallary:" destination="7W7-LR-YTp" eventType="touchUpInside" id="lE8-7B-Qob"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zq-Og-Spv">
                                 <rect key="frame" x="15" y="240" width="345" height="363"/>
@@ -93,6 +99,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnGallary" destination="bZT-Hi-UHw" id="Q7c-mT-upP"/>
                         <outlet property="imgView" destination="V0N-D6-yfA" id="o4Q-a4-p98"/>
                     </connections>
                 </viewController>
@@ -100,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="-570" y="143"/>
         </scene>
-        <!--View Controller-->
+        <!--User Settings Controller-->
         <scene sceneID="5ZA-Wo-JFb">
             <objects>
-                <viewController id="P6g-7B-Pqt" sceneMemberID="viewController">
+                <viewController id="P6g-7B-Pqt" customClass="UserSettingsController" customModule="Photos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f5G-ZI-sHo">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,11 +119,17 @@
                                 <rect key="frame" x="15" y="15" width="220" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add User Icon From Camera"/>
+                                <connections>
+                                    <action selector="btnAddFromCamera:" destination="P6g-7B-Pqt" eventType="touchUpInside" id="gAd-k4-dHq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G14-kD-sZF">
                                 <rect key="frame" x="15" y="60" width="220" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add User Icon From Gallary"/>
+                                <connections>
+                                    <action selector="btnAddFromGallary:" destination="P6g-7B-Pqt" eventType="touchUpInside" id="TJU-iV-RP6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0c-uO-KQi">
                                 <rect key="frame" x="45" y="236" width="160" height="30"/>
@@ -143,11 +156,14 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="250" height="400"/>
+                    <connections>
+                        <outlet property="btnGallary" destination="G14-kD-sZF" id="RmX-Qg-vnc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WR4-46-zOu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hMV-Fp-ft0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="275" y="-31"/>
+            <point key="canvasLocation" x="280" y="-58"/>
         </scene>
     </scenes>
 </document>

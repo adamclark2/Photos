@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D23515272073AABC0011750C /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23515262073AABC0011750C /* CameraController.swift */; };
 		D2B397C920739EAF0076C40D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B397B520739EAE0076C40D /* Assets.xcassets */; };
 		D2B397CA20739EAF0076C40D /* URLImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B397B820739EAE0076C40D /* URLImageProvider.swift */; };
 		D2B397CB20739EAF0076C40D /* MockImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B397B920739EAE0076C40D /* MockImageProvider.swift */; };
@@ -26,6 +25,7 @@
 		D2B5DAC520739C3200EF2079 /* PhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DAC420739C3200EF2079 /* PhotosUITests.swift */; };
 		D2C3D7EE20764DFC00DC63D7 /* User Section.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C3D7ED20764DFC00DC63D7 /* User Section.storyboard */; };
 		D2C3D7F02076567100DC63D7 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C3D7EF2076567100DC63D7 /* UserController.swift */; };
+		D2E3D3F0207C14BA0038F6DE /* UserSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3D3EF207C14B90038F6DE /* UserSettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D23515262073AABC0011750C /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		D2B397B520739EAE0076C40D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2B397B820739EAE0076C40D /* URLImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImageProvider.swift; sourceTree = "<group>"; };
 		D2B397B920739EAE0076C40D /* MockImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockImageProvider.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		D2B5DAC620739C3200EF2079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C3D7ED20764DFC00DC63D7 /* User Section.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "User Section.storyboard"; sourceTree = "<group>"; };
 		D2C3D7EF2076567100DC63D7 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		D2E3D3EF207C14B90038F6DE /* UserSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 		D2B397C420739EAE0076C40D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D23515262073AABC0011750C /* CameraController.swift */,
+				D2E3D3EF207C14B90038F6DE /* UserSettingsController.swift */,
 				D2B397C520739EAE0076C40D /* ImageTabController.swift */,
 				D2B397C620739EAE0076C40D /* UpVoteButton.swift */,
 				D2B397C720739EAE0076C40D /* ImageViewController.swift */,
@@ -356,11 +356,11 @@
 				D2B397CD20739EAF0076C40D /* ImageProvider.swift in Sources */,
 				D2B397D520739EAF0076C40D /* ImageViewController.swift in Sources */,
 				D2B397CB20739EAF0076C40D /* MockImageProvider.swift in Sources */,
+				D2E3D3F0207C14BA0038F6DE /* UserSettingsController.swift in Sources */,
 				D2B397CE20739EAF0076C40D /* URLProvider.swift in Sources */,
 				D2B397CF20739EAF0076C40D /* ImageProviderFactory.swift in Sources */,
 				D2B397D420739EAF0076C40D /* UpVoteButton.swift in Sources */,
 				D2C3D7F02076567100DC63D7 /* UserController.swift in Sources */,
-				D23515272073AABC0011750C /* CameraController.swift in Sources */,
 				D2B397CC20739EAF0076C40D /* ImageMetadata.swift in Sources */,
 				D2B397D320739EAF0076C40D /* ImageTabController.swift in Sources */,
 				D2B397D620739EAF0076C40D /* AppDelegate.swift in Sources */,
